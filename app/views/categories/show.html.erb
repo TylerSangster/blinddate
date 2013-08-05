@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+
+
+<h1>Listing categories</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>commands</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category.activities.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, activity_path(category) %></td>
+        
+        <td>1</td>
+        <td>2</td>
+        <td>
+            <%= link_to 'Edit', edit_category_path(category), :class => "btn" %>
+            <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path, :class=>'btn' %>
+<%= link_to 'New Activity', new_activity_path, :class=>'btn' %>
