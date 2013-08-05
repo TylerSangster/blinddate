@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h1>Welcome to your profile <%= @user.name %></h1>
+<%= image_tag(@user.photo)%>
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Handle:</strong>
+  <%= @user.handle %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @user.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

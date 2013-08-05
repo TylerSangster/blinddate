@@ -1,0 +1,15 @@
+<h1>Log in to BlindDate</h1>
+
+
+<%= form_for @user, url: login_path do |f| %>
+<div>
+Username: <%= f.text_field :username%>
+</div>
+<div>
+password: <%= f.password_field :password %>
+</div>
+
+<%= f.submit "Log in" %>
+<% end %>
+
+<%= link_to 'Sign Up', new_user_path, :class=> 'btn' %>

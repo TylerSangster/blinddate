@@ -17,7 +17,8 @@
         <td><%= activity.name %></td>
         <td><%= activity.category.name %></td>
         
-        <td><%= link_to 'Edit', edit_activity_path(activity) %>
+        <td><%= link_to 'Like', like_like_path(3,1) %>
+            <%= link_to 'Edit', edit_activity_path(activity) %>
             <%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

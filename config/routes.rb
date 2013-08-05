@@ -1,15 +1,36 @@
 Blinddate::Application.routes.draw do
+  resources :users do
+    member do
+      get 'confirm' # /users/:id/confirm
+    end
+  end
+
+
+
+  get '/login', to: 'login#new_session'
+  post '/login', to: 'login#create_session'
+  get '/logout', to: 'login#logout'
+
+
+  get '/profile', to: 'users#edit'
+
   resources :categories
 
   resources :activities
 
-  root to: 'activities#index'
+  resources :likes do
+    member do
+      get 'like' # /users/:id/like
+    end
+  end
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'users#edit'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
